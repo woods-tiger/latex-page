@@ -178,7 +178,7 @@ def resolve_katex(mode: str, script_dir: Path) -> tuple[str, str]:
     def local_url() -> str | None:
         for c in local_candidates:
             if (c / "katex.min.js").exists():
-                return c.as_uri().rsplit("/", 1)[0]
+                return c.as_uri()
         return None
 
     if mode == "local":
@@ -238,4 +238,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
